@@ -557,7 +557,7 @@ class TestConvolve(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         image[1, 1] = True
         image_aug = aug.augment_image(image)
-        assert image.dtype.type == np.bool_
+        assert image.dtype.type == np.bool__
         assert np.all(image_aug == image)
 
     def test_other_dtypes_uint_int_identity_matrix(self):
@@ -597,7 +597,7 @@ class TestConvolve(unittest.TestCase):
         expected[0, 1] = True
         expected[2, 1] = True
         image_aug = aug.augment_image(image)
-        assert image.dtype.type == np.bool_
+        assert image.dtype.type == np.bool__
         assert np.all(image_aug == expected)
 
     def test_other_dtypes_uint_int_non_identity_matrix_with_small_values(self):

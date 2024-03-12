@@ -1461,25 +1461,25 @@ class TestAdd(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         aug = iaa.Add(value=1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Add(value=1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Add(value=-1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Add(value=-2)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
     def test_other_dtypes_uint_int(self):
@@ -1951,25 +1951,25 @@ class TestAddElementwise(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         aug = iaa.AddElementwise(value=1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.AddElementwise(value=1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.AddElementwise(value=-1)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.AddElementwise(value=-2)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
     def test_other_dtypes_uint_int(self):
@@ -3833,31 +3833,31 @@ class TestMultiply(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         aug = iaa.Multiply(1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Multiply(1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Multiply(2.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Multiply(0.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.Multiply(-1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
     def test_other_dtypes_uint_int(self):
@@ -4332,31 +4332,31 @@ class TestMultiplyElementwise(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         aug = iaa.MultiplyElementwise(1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.MultiplyElementwise(1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.MultiplyElementwise(2.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.MultiplyElementwise(0.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         image = np.full((3, 3), True, dtype=bool)
         aug = iaa.MultiplyElementwise(-1.0)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
     def test_other_dtypes_uint_int(self):
@@ -4808,37 +4808,37 @@ class TestReplaceElementwise(unittest.TestCase):
         aug = iaa.ReplaceElementwise(mask=1, replacement=0)
         image = np.full((3, 3), False, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         aug = iaa.ReplaceElementwise(mask=1, replacement=1)
         image = np.full((3, 3), False, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         aug = iaa.ReplaceElementwise(mask=1, replacement=0)
         image = np.full((3, 3), True, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
         aug = iaa.ReplaceElementwise(mask=1, replacement=1)
         image = np.full((3, 3), True, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         aug = iaa.ReplaceElementwise(mask=1, replacement=0.7)
         image = np.full((3, 3), False, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 1)
 
         aug = iaa.ReplaceElementwise(mask=1, replacement=0.2)
         image = np.full((3, 3), False, dtype=bool)
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == 0)
 
     def test_other_dtypes_uint_int(self):

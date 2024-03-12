@@ -429,7 +429,7 @@ class Test_blur_gaussian_(unittest.TestCase):
                 np.copy(image), sigma=0.6, backend=backend)
             expected = mask_bool > 0.5
             assert image_aug.shape == mask_bool.shape
-            assert image_aug.dtype.type == np.bool_
+            assert image_aug.dtype.type == np.bool__
             assert np.all(image_aug == expected)
 
 
@@ -723,7 +723,7 @@ class TestGaussianBlur(unittest.TestCase):
         image = np.zeros((3, 3), dtype=bool)
         image[1, 1] = True
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == image)
 
     def test_other_dtypes_uint_int_at_sigma_0(self):
@@ -787,7 +787,7 @@ class TestGaussianBlur(unittest.TestCase):
         image_aug = aug.augment_image(image)
         expected = mask_bool > 0.5
         assert image_aug.shape == mask_bool.shape
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == expected)
 
     def test_other_dtypes_at_sigma_1(self):
@@ -1188,7 +1188,7 @@ class TestAverageBlur(unittest.TestCase):
         image[1, 1] = True
         image[2, 2] = True
         image_aug = aug.augment_image(image)
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == image)
 
         # uint, int
@@ -1250,7 +1250,7 @@ class TestAverageBlur(unittest.TestCase):
         image[2, 2] = True
         image_aug = aug.augment_image(image)
         expected = mask > 0.5
-        assert image_aug.dtype.type == np.bool_
+        assert image_aug.dtype.type == np.bool__
         assert np.all(image_aug == expected)
 
         # uint, int

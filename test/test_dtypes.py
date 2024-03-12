@@ -378,7 +378,7 @@ class Test_change_dtypes_(unittest.TestCase):
 # TODO is the copy_* function still used anywhere
 class Test_copy_dtypes_for_restore(unittest.TestCase):
     def test_images_as_list(self):
-        # TODO using dtype=np.bool is causing this to fail as it ends up
+        # TODO using dtype=np.bool_ is causing this to fail as it ends up
         #      being <type bool> instead of <type 'numpy.bool_'>.
         #      Any problems from that for the library?
         images = [
@@ -480,7 +480,7 @@ class Test_get_minimal_dtype(unittest.TestCase):
             np.int8, np.int16, np.int32, np.int64,
             np.uint8, np.uint16, np.uint32, np.uint64,
             np.float16, np.float32, np.float64,
-            np.bool_
+            np.bool__
         ]
 
         for dt_func in dt_funcs:
@@ -494,7 +494,7 @@ class Test_get_minimal_dtype(unittest.TestCase):
             np.int8, np.int16, np.int32, np.int64,
             np.uint8, np.uint16, np.uint32, np.uint64,
             np.float16, np.float32, np.float64,
-            np.bool_
+            np.bool__
         ]
 
         for dt in dts:
@@ -510,7 +510,7 @@ class Test_get_minimal_dtype(unittest.TestCase):
             np.int8, np.int16, np.int32, np.int64,
             np.uint8, np.uint16, np.uint32, np.uint64,
             np.float16, np.float32, np.float64,
-            np.bool_
+            np.bool__
         ]
 
         for dt in dts:
@@ -527,12 +527,12 @@ class Test_get_minimal_dtype(unittest.TestCase):
             [np.uint8, np.uint16],
             [np.uint8, np.uint32],
             [np.uint8, np.int8],
-            [np.uint8, np.bool_],
+            [np.uint8, np.bool__],
             [np.int8, np.int16],
             [np.float16, np.float32],
             [np.uint8, np.float32],
             [np.uint8, np.int8, np.int16],
-            [np.uint8, np.int8, np.bool_],
+            [np.uint8, np.int8, np.bool__],
             [np.uint8, np.int8, np.float32],
         ]
         expecteds = [
@@ -1130,7 +1130,7 @@ class Test_gate_dtypes(unittest.TestCase):
         dtypes = [np.dtype("uint8"), np.dtype("uint8"), np.dtype("float32"),
                   np.dtype("int64")]
         allowed = [np.uint8, np.float32, np.int64]
-        disallowed = [np.bool_]
+        disallowed = [np.bool__]
 
         iadt.gate_dtypes(dtypes, allowed, disallowed)
 
@@ -1139,7 +1139,7 @@ class Test_gate_dtypes(unittest.TestCase):
         dtypes = [np.dtype("uint8"), np.dtype("uint8"), np.dtype("float32"),
                   np.dtype("int64")]
         allowed = [np.uint8, np.float32]
-        disallowed = [np.bool_, np.int64]
+        disallowed = [np.bool__, np.int64]
 
         with self.assertRaises(ValueError) as context:
             iadt.gate_dtypes(dtypes, allowed, disallowed)
